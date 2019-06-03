@@ -1,0 +1,3 @@
+Alpine Linux uses "musl libc" not the Linux standard "glibc".
+Because of this normal JDK will not run in side Alpine and must use a spscific version like the one
+from ZuluJDK. Select the Alpine specific JDK
