@@ -56,12 +56,20 @@ up: build run ## Run container on port configured in `config.env` (Alias to run)
 stop: ## Stop and remove a running container
 	docker stop $(APP_NAME); docker rm $(APP_NAME)
 
+# Containers
+
+ps:  ## List containers
+	docker ps
+
+psa:  ## List all containers
+	docker ps -a
+
 # Docker tagging
-#tag: tag-latest tag-version ## Generate container tags for the `{version}` ans `latest` tags
+# tag: tag-latest tag-version ## Generate container tags for the `{version}` ans `latest` tags
 
 #tag-latest: ## Generate container `{version}` tag
-	#@echo 'create tag latest'
-	#docker tag $(APP_NAME) $(DOCKER_REPO)/$(APP_NAME):latest
+#@echo 'create tag latest'
+#docker tag $(APP_NAME) $(DOCKER_REPO)/$(APP_NAME):latest
 
 
 tag-version: ## Generate container `latest` tag
