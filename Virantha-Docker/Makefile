@@ -36,10 +36,10 @@ lista: ## List docker repository
 	docker images -a
 
 build: ## Build the container
-	docker build -t $(APP_NAME) .
+	docker build -t $(APP_NAME):$(VERSION) .
 
 build-nc: ## Build the container without caching
-	docker build --no-cache -t $(APP_NAME) .
+	docker build --no-cache -t $(APP_NAME):$(VERSION) .
 
 
 remove:  ## Remove docker image (latest) as defined in deploy.env
