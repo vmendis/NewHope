@@ -46,10 +46,10 @@ remove:  ## Remove docker image (latest) as defined in deploy.env
 	docker rmi $(APP_NAME)
 
 run: ## Run container on port configured in `config.env`
-	docker run -i -t --rm --env-file=./config.env -p=$(PORT):$(PORT) --name="$(APP_NAME)-$(VERSION)" $(APP_NAME):$(VERSION) 
+	docker run -i -t --rm --env-file=./config.env -p=$(PORT):$(PORT) --name="$(APP_NAME)" $(APP_NAME)
 
 runsh: ## Run container on port configured in `config.env` with sh
-	docker run -i -t --rm --env-file=./config.env -p=$(PORT):$(PORT) --name="$(APP_NAME)-$(VERSION)" $(APP_NAME):$(VERSION) sh
+	docker run -i -t --rm --env-file=./config.env -p=$(PORT):$(PORT) --name="$(APP_NAME)" $(APP_NAME) sh
 
 up: build run ## Run container on port configured in `config.env` (Alias to run)
 
