@@ -1,3 +1,5 @@
 ?/
 target/
-
+*.swp
+git-pass
+.Dockerfile.swp
