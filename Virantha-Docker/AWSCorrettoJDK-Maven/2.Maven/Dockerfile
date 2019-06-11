@@ -2,7 +2,7 @@
 # Build : docker build -t maven:3.3-jdk-12 .                 // This will override the current version
 
 
-FROM awscorrettojdk:11
+FROM awscorrettojdk:8.21
 
 ENV MAVEN_VERSION 3.3.9
 
@@ -13,8 +13,8 @@ ENV MAVENHOMEBIN="$MAVENHOME/bin"
 USER root
 
 
-RUN addgroup maven && \
-    adduser -D -g 'Maven User' -G maven -h $MAVENHOME maven
+RUN groupadd maven && \
+    useradd -c 'Maven User' -g maven -m -d $MAVENHOME -s /usr/bin/mvn maven
 
 RUN mkdir -p $MAVENHOME && \
     cd  $MAVENHOME  &&   \

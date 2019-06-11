@@ -6,4 +6,4 @@
 
 cat version.sh | grep version | grep '\([0-9.]\+\.\?\)\{3\}' -o
 
-version=3.7
+version=8.21

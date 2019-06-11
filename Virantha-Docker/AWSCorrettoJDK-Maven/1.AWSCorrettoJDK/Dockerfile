@@ -11,7 +11,6 @@
 #                                                                            // mvn jetty:run  fails. Idea is to test the code  
 # wget    https://d3pxv6yz143wms.cloudfront.net/$JAVA_VERSION.$OPEN_JDK_VERSION.04.2/amazon-corretto-$JAVA_VERSION.$OPEN_JDK_VERSION.4.2-linux-x64.tar.gz && \
 
-# FROM ubuntu-base:19.10
 FROM ubuntu-base:19.10
 
 ENV JAVA_HOME="/opt/jvm"
@@ -30,8 +29,8 @@ MAINTAINER Virantha Mendis
 RUN groupadd java && \
     useradd -c 'Java User' -g java -m -d /opt/jvm -s /bin/sh java   && \
     cd $JAVA_HOME && \
-     wget    https://d3pxv6yz143wms.cloudfront.net/8.212.04.2/amazon-corretto-8.212.04.2-linux-x64.tar.gz && \
-    tar -xzvf   amazon-corretto-8.212.04.2-linux-x64.tar.gz && \
+    wget    https://d3pxv6yz143wms.cloudfront.net/8.212.04.2/amazon-corretto-8.212.04.2-linux-x64.tar.gz && \
+    tar -xzvf   amazon-corretto-8.212.04.2-linux-x64.tar.gz --strip-components=1  && \
     rm   amazon-corretto-8.212.04.2-linux-x64.tar.gz && \
     chown  -R $JAVA_USER:$JAVA_GROUP $JAVA_HOME && \
     cd /tmp  && \ 
