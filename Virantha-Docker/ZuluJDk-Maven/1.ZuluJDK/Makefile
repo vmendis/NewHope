@@ -1,1 +1,1 @@
-/home/virantha.mendis@int.ccoe.cloud/Work/Virantha-Docker/Makefile
+../../Makefile

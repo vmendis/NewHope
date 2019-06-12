@@ -42,8 +42,8 @@ build-nc: ## Build the container without caching
 	docker build --no-cache -t $(APP_NAME):$(VERSION) .
 
 
-remove:  ## Remove docker image (latest) as defined in deploy.env
-	docker rmi $(APP_NAME)
+remove:  ## Remove docker image  as defined in deploy.env
+	docker rmi $(APP_NAME):$(VERSION)
 
 run: ## Run container on port configured in `config.env`
 	docker run -i -t --rm --env-file=./config.env -p=$(PORT):$(PORT) --name="$(APP_NAME)-$(VERSION)" $(APP_NAME):$(VERSION) 
@@ -72,10 +72,9 @@ psa:  ## List all containers
 #docker tag $(APP_NAME) $(DOCKER_REPO)/$(APP_NAME):latest
 
 
-tag-version: ## Generate container `latest` tag
+tag-latest: ## Generate container `latest` tag
 	@echo 'create tag $(VERSION)'
-#	docker tag $(APP_NAME) $(DOCKER_REPO)/$(APP_NAME):$(VERSION)
-	docker tag $(APP_NAME) $(APP_NAME):$(VERSION) 
+	docker tag $(APP_NAME):$(VERSION) $(APP_NAME):latest
 
 # Docker system maintenance
 
@@ -91,6 +90,6 @@ nuke:  ## Wholesale clean !!
 version: ## Output the current version
 	@echo $(VERSION)
 
-rm:   ## Remove latest
-	docker rmi $(APP_NAME) 
+rml:   ## Remove latest
+	docker rmi $(APP_NAME)
 
