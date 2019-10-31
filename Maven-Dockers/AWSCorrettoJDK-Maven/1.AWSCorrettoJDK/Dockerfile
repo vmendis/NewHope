@@ -9,7 +9,6 @@
 #  tools-1.6.0.jar.zip is downloaded and installed onto /opt/lib/tools.jar     // This is for the tutorial from
 #                                                                             // https://github.com/maping/java-maven-calculator-web-app
 #                                                                            // mvn jetty:run  fails. Idea is to test the code  
-# wget    https://d3pxv6yz143wms.cloudfront.net/$JAVA_VERSION.$OPEN_JDK_VERSION.04.2/amazon-corretto-$JAVA_VERSION.$OPEN_JDK_VERSION.4.2-linux-x64.tar.gz && \
 
 FROM ubuntu-base:19.10
 
