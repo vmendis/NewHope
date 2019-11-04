@@ -6,4 +6,4 @@
 
 cat version.sh | grep "version=" version.sh | sed 's/.*=//' | grep -v /
 
-version=3.3-jdk-12
+version=3.3-ZULUJDK-12
