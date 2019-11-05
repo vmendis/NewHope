@@ -66,7 +66,7 @@ alias javac='docker run --rm  -v $PWD:/app -w /app  -u $(id -u ${USER}):$(id -g 
 
 
 #### Test a java application
-
+```sh
 The example code used for testing is in ./NewHope/Java-Code
 
 $ cd ./NewHope/Java-Code
@@ -93,4 +93,5 @@ Hello, World
 
 **Further notes will be added describing few more examples of building Java applications
 **
+```
 
