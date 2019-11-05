@@ -22,6 +22,13 @@ Two JDK distributions are used as examples to build the docker images
 - build-all.sh -  This script sits inside each version of maven build sub-direcory and uses the make command to build the docker image
 
 - Make sue **wget** is available on the host. If not please install it
+- The build process has been tested on "Amazon Linux 2" and "MacOS". If it necessary to install Docker in these two platforms follow the correct procedure and install docker before continuing. 
+
+Installing Docker "Amazon Linux 2" :
+https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
+
+Installing Docker on "MacOS" : 
+https://docs.docker.com/docker-for-mac/install/
 
 ### Dependencies
 
@@ -49,7 +56,7 @@ alias javac='docker run --rm  -v $PWD:/app -w /app  -u $(id -u ${USER}):$(id -g 
 #### Steps to build ZuluJDK-Maven
 
 ```sh
-$ cd ./NewHope/Maven-Dockers/AWSCorrettoJDK-Maven
+$ cd ./NewHope/Maven-Dockers/ZuluJDk-Maven
 $ ./build-all.sh
 Set few aliases.  Put these in ~/.bashrc, if your shell is bash
 alias mvn='docker run -it --rm -v "$PWD":/app -w /app -u $(id -u ${USER}):$(id -g ${USER}) maven:3.3-ZULUJDK-12 mvn'
@@ -62,8 +69,7 @@ alias javac='docker run --rm  -v $PWD:/app -w /app  -u $(id -u ${USER}):$(id -g 
 
 The example code used for testing is in ./NewHope/Java-Code
 ```sh
-$ cd <to-above-directory>
-$ ./build-using-aws-jdk.sh
+$ cd ./NewHope/Java-Code
 
 **Compiling and running code using AWSJDK**
 [ec2-user@10 Java-Code]$  ./build-using-aws-jdk.sh
@@ -84,4 +90,7 @@ Running code using ZuluJDK.....
 Hello, World
 [ec2-user@10 Java-Code]$
 
-#### Further notes will be added ......
+
+**Further notes will be added describing few more examples of building Java applications
+**
+
