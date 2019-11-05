@@ -48,7 +48,7 @@ $ git clone https://github.com/vmendis/NewHope.git
 $ cd ./NewHope/Maven-Dockers/AWSCorrettoJDK-Maven
 $ ./build-all.sh
 Set few aliases.  Put these in ~/.bashrc, if your shell is bash
-alias mvn='docker run -it --rm -v "$PWD":/app -w /app -u $(id -u ${USER}):$(id -g ${USER}) maven:3.3-AWSJDK-8-21 mvn
+alias mvn='docker run -it --rm -v "$PWD":/app -w /app -u $(id -u ${USER}):$(id -g ${USER}) maven:3.3-AWSJDK-8-21 mvn'
 alias java='docker run --rm -v $PWD:/app -w /app -u $(id -u ${USER}):$(id -g ${USER}) awscorrettojdk:8.21  java'
 alias javac='docker run --rm  -v $PWD:/app -w /app  -u $(id -u ${USER}):$(id -g ${USER})   awscorrettojdk:8.21 javac'
 ```
@@ -68,7 +68,7 @@ alias javac='docker run --rm  -v $PWD:/app -w /app  -u $(id -u ${USER}):$(id -g 
 #### Test a java application
 
 The example code used for testing is in ./NewHope/Java-Code
-```sh
+
 $ cd ./NewHope/Java-Code
 
 **Compiling and running code using AWSJDK**
